@@ -1,0 +1,30 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+}
+
+group 'cn.fivezha'
+version '0.0.1'
+
+def steamPath = "/Volumes/[C] Windows 10/Program Files (x86)/Steam/steamapps"
+
+repositories {
+    mavenCentral()
+}
+
+jar {}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.5.31"
+    implementation files("${steamPath}/common/SlayTheSpire/desktop-1.0.jar")
+    implementation files("${steamPath}/workshop/content/646570/1605060445/ModTheSpire.jar")
+    implementation files("${steamPath}/workshop/content/646570/1605833019/BaseMod.jar")
+    implementation files("${steamPath}/workshop/content/646570/1609158507/StSLib.jar")
+}
+
+task copyJar(type: Copy) {
+    from file("build/libs/BiliLiverTrickGiftMod-${version}.jar")
+    into file("${steamPath}/common/SlayTheSpire/mods")
+}
+
+copyJar.dependsOn jar
