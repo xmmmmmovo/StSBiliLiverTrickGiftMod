@@ -1,0 +1,17 @@
+{
+  "BiliLiverTrickGift:UIDPanel": {
+    "TEXT": [
+      "0000000000",
+      "输入B站UID",
+      "确认",
+      "取消",
+      "",
+      ""
+    ]
+  },
+  "BiliLiverTrickGift:ModPanel": {
+    "TEXT": [
+      "UID:"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-package utils
+package BiliLiverTrickGift.utils
 
 import BiliLiverTrickGift.modID
 import com.badlogic.gdx.graphics.Texture
@@ -7,7 +7,8 @@ import com.badlogic.gdx.utils.GdxRuntimeException
 
 
 object TextureLoader {
-    private val textures = HashMap<String, Texture?>()
+    @JvmStatic
+    private val textures = HashMap<String, Texture>()
     private val logger = logger()
 
     /**
@@ -15,7 +16,7 @@ object TextureLoader {
      * Example: "theDefaultResources/images/ui/missing_texture.png"
      * @return **com.badlogic.gdx.graphics.Texture** - The texture from the path provided
      */
-    fun getTexture(textureString: String): Texture? {
+    fun getTexture(textureString: String): Texture {
         if (textures[textureString] == null) {
             try {
                 loadTexture(textureString)
@@ -24,7 +25,7 @@ object TextureLoader {
                 return getTexture("$modID/images/ui/missing_texture.png")
             }
         }
-        return textures[textureString]
+        return textures[textureString]!!
     }
 
     /**

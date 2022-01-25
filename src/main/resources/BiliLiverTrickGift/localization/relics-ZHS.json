@@ -1,0 +1,9 @@
+{
+  "BiliLiverTrickGift:BiliLiveObserver": {
+    "NAME": "直播观测机",
+    "FLAVOR": "观测你的直播间",
+    "DESCRIPTIONS": [
+      "监视中~"
+    ]
+  }
+}
